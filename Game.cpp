@@ -21,7 +21,7 @@ Game::Game()
 
     std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
 
-    std::string imagePath = "C:/MappyRust/map.png";
+    std::string imagePath = "map.png";
 
     std::ifstream file(imagePath, std::ios::binary);
     if (!file)
