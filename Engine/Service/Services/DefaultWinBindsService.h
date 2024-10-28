@@ -11,10 +11,11 @@ public:
 };
 
 class DefaultWinBindsService : public ServiceBase {
-public:
+public: // variables
 	bool isFullscreen = false;
 	BorderlessInfo desktopMode;
 
+public: // .ctors
 	DefaultWinBindsService(GameEngine* engine)
 	{
 		this->Init(engine);
@@ -24,28 +25,7 @@ public:
 		DebugLogger::Print(LogType::Info, "Initialized : DefaultWinBindsService");
 	};
 
-	void OnKeyPressed(sf::Event::KeyEvent e)
-	{
-		if (e.code == sf::Keyboard::Escape)
-			Engine->Window->close();
-
-		if (e.code == sf::Keyboard::F11)
-		{
-			sf::WindowHandle hwnd = Engine->Window->getSystemHandle();
-
-			if (isFullscreen)
-			{
-				RestoreWindowStyle(hwnd, desktopMode);
-			}
-			else
-			{
-				desktopMode = SetBorderlessFullscreen(hwnd);
-			}
-
-			isFullscreen = !isFullscreen;
-		}
-	}
-
+public: // utils
 	BorderlessInfo SetBorderlessFullscreen(sf::WindowHandle hwnd)
 	{
 		BorderlessInfo info;
@@ -73,6 +53,29 @@ public:
 		int height = info.Dimensions.bottom - y;
 
 		SetWindowPos(hwnd, HWND_NOTOPMOST, x, y, width, height, SWP_SHOWWINDOW);
+	}
+
+public: // events
+	void OnKeyPressed(sf::Event::KeyEvent e)
+	{
+		if (e.code == sf::Keyboard::Escape)
+			Engine->Window->close();
+
+		if (e.code == sf::Keyboard::F11)
+		{
+			sf::WindowHandle hwnd = Engine->Window->getSystemHandle();
+
+			if (isFullscreen)
+			{
+				RestoreWindowStyle(hwnd, desktopMode);
+			}
+			else
+			{
+				desktopMode = SetBorderlessFullscreen(hwnd);
+			}
+
+			isFullscreen = !isFullscreen;
+		}
 	}
 };
 

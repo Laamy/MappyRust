@@ -136,6 +136,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine\GameEngine.cpp" />
+    <ClCompile Include="Engine\Service\Services\Camera2DService.cpp" />
+    <ClCompile Include="Engine\Service\Services\MarkerService.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="SDK\ClientInstance.cpp" />
     <ClCompile Include="TypeRengine.cpp" />
@@ -147,6 +149,7 @@
     <ClInclude Include="Engine\Service\ServiceBase.h" />
     <ClInclude Include="Engine\Service\Services\Camera2DService.h" />
     <ClInclude Include="Engine\Service\Services\DefaultWinBindsService.h" />
+    <ClInclude Include="Engine\Service\Services\MarkerService.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Engine\GameEngine.h" />
     <ClInclude Include="SDK\ClientInstance.h" />
