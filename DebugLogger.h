@@ -65,11 +65,13 @@ namespace DebugLogger
 		return oss.str();
 	}
 
-	inline void Print(LogType type, const std::string& message)
+	inline bool Print(LogType type, const std::string& message, bool ret = true)
 	{
 		std::string curTime = get_current_time();
 
 		std::cout << std::format("[{}, {}] {}\n", curTime, to_string(type), message);
+
+		return ret; // for chaining with returns
 	}
 
 	__forceinline void Debug(const std::string& message)

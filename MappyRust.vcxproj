@@ -149,6 +149,7 @@
     <ClInclude Include="Engine\Service\ServiceBase.h" />
     <ClInclude Include="Engine\Service\Services\Camera2DService.h" />
     <ClInclude Include="Engine\Service\Services\DefaultWinBindsService.h" />
+    <ClInclude Include="Engine\Service\Services\MapLoaderService.h" />
     <ClInclude Include="Engine\Service\Services\MarkerService.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Engine\GameEngine.h" />

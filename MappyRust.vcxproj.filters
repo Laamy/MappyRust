@@ -65,6 +65,9 @@
     <ClInclude Include="Engine\Service\Services\MarkerService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Service\Services\MapLoaderService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
